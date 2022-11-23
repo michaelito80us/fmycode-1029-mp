@@ -1,0 +1,4 @@
+/* pages/stories/show.wxss */
+.container {
+  padding: 60rpx 30rpx;
+}

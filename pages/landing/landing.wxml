@@ -1,0 +1,14 @@
+<!--pages/landing/landing.wxml-->
+<view class="banner">
+  <view class="white" >
+    <view style="margin-bottom: 120rpx; font-size: 48rpx; font-weight: bold">
+      Welcome to F MY CODE
+    </view>
+    <view bindtap="goToNextPage" style="width:fit-content; background-color: white; color: red; padding: 32rpx 64rpx; border-radius: 8rpx; margin: 0 auto;">
+      ENTER
+    </view>
+    <!-- <navigator url="/pages/stories/index">
+      <button type="primary">Enter</button> 
+    </navigator> -->
+  </view>
+</view>

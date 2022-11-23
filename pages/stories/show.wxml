@@ -1,0 +1,11 @@
+<!--pages/stories/show.wxml-->
+<view class="container">
+  <view style="font-size: 48rpx; margin-bottom: 60rpx;">
+  {{story.title}}
+</view>
+
+<view style="font-size: 32rpx;">
+  {{story.content}}
+</view>
+
+</view>

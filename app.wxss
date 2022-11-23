@@ -1,0 +1,18 @@
+/**app.wxss**/
+
+
+.white{
+  color: white
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.f40 {
+  font-size: 40rpx;
+}
+
+.f46 {
+  font-size: 46rpx;
+}

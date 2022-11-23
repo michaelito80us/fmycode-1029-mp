@@ -1,0 +1,31 @@
+/* pages/stories/index.wxss */
+
+.banner {
+  background: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,.4)), url(https://images.unsplash.com/photo-1569615313731-7407da4f4594?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  height: 30vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-product {
+  overflow: hidden;
+  height: 240rpx;
+  background: white;
+  box-shadow: 0 0 30rpx rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.card-product-infos {
+  padding: 32rpx;
+}
+
+.container {
+  padding: 30rpx 30rpx 80rpx 30rpx;
+}
+

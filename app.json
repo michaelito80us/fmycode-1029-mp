@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/landing/landing",
+    "pages/stories/index",
+    "pages/stories/show",
+    "pages/stories/form"
+  ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/stories/index",
+      "iconPath": "/icons/home.png",
+      "selectedIconPath": "/icons/home-selected.png",
+      "text": "Index"
+    },{
+      "pagePath": "pages/stories/form",
+      "iconPath": "/icons/plus.png",
+      "selectedIconPath": "/icons/plus-selected.png",
+      "text": "New Story"
+    }]
+  },
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

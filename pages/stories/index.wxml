@@ -1,0 +1,24 @@
+<!--pages/stories/index.wxml-->
+<!-- banner 20% -->
+
+<view style="color: {{fontColor}}" class="banner white bold f{{fontSize}}">
+  Follow {{name}}'s life 
+</view>
+
+<!-- cards with the stories -->
+
+<view class="container">
+<block wx:if="{{stories}}">
+  <view bindtap="goToStory" data-storyIndex="{{index}}" wx:for="{{stories}}" wx:for-item="story" class="card-product">
+    <view class="card-product-infos">
+      <view>{{story.title}}</view>
+    </view>
+  </view> 
+</block>
+<block wx:else>
+<view>
+  nothing to see here. come back later
+</view>
+  
+</block>
+</view>
