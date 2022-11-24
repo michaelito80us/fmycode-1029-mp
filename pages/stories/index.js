@@ -17,7 +17,7 @@ Page({
   goToStory(e) {
     console.log('this is the event of goToStory', e)
     wx.navigateTo({
-      url: `/pages/stories/show?id=${e.currentTarget.dataset.storyindex}`,
+      url: `/pages/stories/show?id=${e.currentTarget.dataset.storyid}`,
     })
   },
 
@@ -56,6 +56,11 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const page = this
+
+    wx.showLoading({
+      title: 'loading',
+    })
       // this is how i add data to the page data object ---->  this.setData
       const message = "i just added this data"
       this.setData({ message })
@@ -65,8 +70,18 @@ Page({
       // this.setData({stories})
 
       // this is to get stories from storage
-      const stories = wx.getStorageSync('stories')
-      this.setData({stories})
+      // const stories = wx.getStorageSync('stories')
+      // this.setData({stories})
+
+      wx.request({
+        url: 'http://localhost:3000/api/v1/stories',
+        method: "GET",
+        success(res) {
+          console.log('response from GET stories', res.data)
+          page.setData({stories: res.data.stories})
+          wx.hideLoading()
+        }
+      })
 
   },
 

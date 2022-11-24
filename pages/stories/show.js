@@ -9,17 +9,71 @@ Page({
     
   },
 
+  deleteStory(){
+
+    wx.showModal({
+      title: 'Are you sure?',
+      content: 'There is no turning back',
+      confirmText: "YES",
+      cancelText: "NO",
+      complete: (res) => {
+        if (res.cancel) {
+          
+        }
+    
+        if (res.confirm) {
+          const id = this.data.story.id
+          wx.request({
+            url: `http://localhost:3000/api/v1/stories/${id}`,
+            method: "DELETE",
+            success(res) {
+              console.log(res)
+              wx.switchTab({
+                url: '/pages/stories/index',
+              })
+            }
+          })
+        }
+      }
+    })
+
+    
+  },
+
+  editStory(){
+    const id = this.data.story.id
+    wx.setStorageSync('id', id)
+
+    wx.switchTab({
+      url: '/pages/stories/form',
+    })
+
+
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    const page = this
       console.log('story shoy onLoad options', options)
-      const index = options.id
+      const id = options.id
 
+      // if we are using global data
       // const story = app.globalData.stories[index]
-    const story = wx.getStorageSync('stories')[index]
 
-      this.setData({story})
+      // if we are using cache memory
+      // const story = wx.getStorageSync('stories')[index]
+      // this.setData({story})
+
+      // if we are calling an api
+      wx.request({
+        url: `http://localhost:3000/api/v1/stories/${id}`,
+        success(res) {
+          console.log('response from wx.request for GET story', res.data)
+          page.setData({story: res.data})
+        }
+      })
   },
 
   /**

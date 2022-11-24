@@ -8,4 +8,11 @@
   {{story.content}}
 </view>
 
+<view class="btns">
+  <button bindtap="editStory" type="primary">Edit</button>
+  <button bindtap="deleteStory" type="warn">Delete</button>
+</view>
+
+
+
 </view>

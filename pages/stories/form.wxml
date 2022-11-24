@@ -1,12 +1,12 @@
 <!--pages/stories/form.wxml-->
 <view class="container">
 <view class="header">ADD A NEW STORY:</view>
-  <form bindsubmit="createNewStory">
+  <form bindsubmit="submitStory">
     <label for="title">Title:</label>
-    <input class="input" style="margin-bottom: 30rpx;" type="text" id="title" name="title"/>
+    <input class="input" style="margin-bottom: 30rpx;" type="text" id="title" name="title" value="{{formTitle}}"/>
 
     <label for="content">Content:</label>
-    <textarea name="content" class="input" id="content" />
+    <textarea name="content" class="input" id="content" value="{{formContent}}" />
 
     <button style="margin: 100rpx 0" type="primary" formType="submit">Submit</button>
   </form>

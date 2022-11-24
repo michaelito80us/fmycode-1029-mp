@@ -9,7 +9,7 @@
 
 <view class="container">
 <block wx:if="{{stories}}">
-  <view bindtap="goToStory" data-storyIndex="{{index}}" wx:for="{{stories}}" wx:for-item="story" class="card-product">
+  <view bindtap="goToStory" data-storyId="{{story.id}}" wx:for="{{stories}}" wx:for-item="story" class="card-product">
     <view class="card-product-infos">
       <view>{{story.title}}</view>
     </view>
